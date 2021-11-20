@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Caroline",
+    "level": "1",
+    "attacks": [
+      { "id": 1, "name": "patate", "damages": 5 },
+      { "id": 2, "name": "patate sautée", "damages": 10 }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Ulrich",
+    "level": "15",
+    "attacks": [
+      { "id": 1, "name": "gnon", "damages": 15 },
+      { "id": 2, "name": "oh gnon", "damages": 20 }
+    ]
+  }
+]
