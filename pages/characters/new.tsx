@@ -1,26 +1,29 @@
 import { GetServerSideProps, NextPage } from "next";
+import { useState } from "react";
 import CharacterApi from "../../lib/api/characters";
 import { PageProps } from "../../lib/interfaces/page";
 import Character from "../../lib/models/Character";
+import { server } from "../../config";
 
 
-interface CharacterPageProps extends PageProps {
+interface NewCharacterPageProps extends PageProps {
    character: Character;
 }
 
-const CharacterPage: NextPage<CharacterPageProps> = ({ character }) => {
+const NewCharacterPage: NextPage<NewCharacterPageProps> = ({ character }) => {
 
-   if (!character.id) {
-      return <div>on a pas trouvé déso</div>
-   } else {
-      return (
-         <div>
-            <p>{character.name}</p>
-            <p>level: {character.statistics.level}</p>
-            <p>classe: {character.role}</p>
-         </div>
-      );
-   }
+   const [newCharacter, setNewCharacter] = useState();
+
+   return (
+      <div>
+         <h1>nouveau perso</h1>
+         <form action={`${server}/api/characters/new`} method="POST" >
+            <label htmlFor="name">Name</label>
+            <input id="name" type="text" autoComplete="name" required />
+            <button type="submit">Register</button>
+         </form>
+      </div >
+   )
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -37,4 +40,4 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
    return { props: { character } };
 };
 
-export default CharacterPage;
+export default NewCharacterPage;

@@ -14,6 +14,8 @@ const CharactersPage: NextPage<CharactersPageProps> = ({ characters }) => {
          {characters.map((character: any) => {
             return <div key={characters.id}>
                <Link href={`/characters/${character.id}`}>{character.name}</Link>
+               <p>level: {character.statistics.level}</p>
+               <p>classe: {character.role}</p>
             </div>
          })}
       </div>

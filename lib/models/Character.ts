@@ -1,13 +1,32 @@
+import Statistics from "./Statistics";
+
 class Character {
   id;
   name;
-  level;
-  attacks;
-  constructor(id: string, name: string, level: number, attacks: any[]) {
+  gender;
+  race;
+  role;
+  statistics;
+  equipments;
+  inventory;
+  constructor(
+    id: string,
+    name: string,
+    gender: string,
+    race: any,
+    role: any,
+    statistics: Statistics,
+    equipments: any,
+    inventory: any
+  ) {
     this.id = id;
     this.name = name;
-    this.level = level;
-    this.attacks = attacks;
+    this.gender = gender;
+    this.race = race;
+    this.role = role;
+    this.statistics = statistics;
+    this.equipments = equipments;
+    this.inventory = inventory;
   }
 }
 
