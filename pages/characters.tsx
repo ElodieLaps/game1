@@ -1,10 +1,10 @@
 import { GetServerSideProps, NextPage } from "next";
 import CharacterApi from "../lib/api/characters";
-import { PageProps } from "../lib/interfaces/page";
+import { PagePropsType } from "../lib/types/page";
 import Link from "next/link";
 
 
-interface CharactersPageProps extends PageProps {
+interface CharactersPageProps extends PagePropsType {
    characters: any;
 }
 

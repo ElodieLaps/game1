@@ -1,12 +1,12 @@
 import { GetServerSideProps, NextPage } from "next";
 import { useState } from "react";
 import CharacterApi from "../../lib/api/characters";
-import { PageProps } from "../../lib/interfaces/page";
+import { PagePropsType } from "../../lib/types/page";
 import Character from "../../lib/models/Character";
 import { server } from "../../config";
 
 
-interface NewCharacterPageProps extends PageProps {
+interface NewCharacterPageProps extends PagePropsType {
    character: Character;
 }
 
